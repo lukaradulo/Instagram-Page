@@ -1,0 +1,151 @@
+@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap";
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  position: fixed;
+  top: 0; 
+  width: 100%;
+
+  border-bottom: 1px solid rgb(219, 219, 219);
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+
+  z-index: 100;
+}
+
+.navbar-inner {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+
+  padding: 12px 16px;
+
+  max-width: 975px;
+  width: 100%;
+}
+
+.nav-title {
+  display: block3;
+  font-family: 'Dancing Script';
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 20px;
+  flex: 1 0 127px;
+}
+
+.nav-searchbar {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  flex: 0 1 auto;
+
+  border-radius: 8px;
+
+  height: 36px;
+  min-width: 125px;
+  width: 268px;
+  
+  background-color: rgb(239, 239, 239);
+}
+
+.navbar .nav-search-icon {
+  padding-left: 10px;
+}
+
+.navbar input {
+  width: 88%;
+  padding: 3px 10px;
+  
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+
+  color: rgb(38, 38, 38);
+  background-color: rgb(239, 239, 239);
+}
+
+::placeholder {
+  color: rgb(158, 158, 158);
+}
+
+.nav-icons {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  /* margin-left: 6%; */
+  margin-right: 20px;
+  flex: 1 0 127px;
+  color: rgb(63, 63, 63);
+
+  /* background-color: rgb(78, 97, 97); */
+}
+
+a:visited {
+  text-decoration: none; 
+  color: rgb(63, 63, 63); 
+}
+
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 9px;
+  height: 28px;
+  width: 28px;
+
+  text-decoration: none;
+}
+
+.navbar img {
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  border: 1px solid rgb(174, 174, 174);
+  /* margin: 0 9px; */
+  margin: 0;
+}
+
+.navbar .icon-name {
+  position: absolute;
+  bottom: -20px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+
+  padding: 4px;
+  border-radius: 4px;
+
+  color: rgb(244, 244, 244);
+  background-color: rgb(161, 161, 161);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar .nav-icon:hover .icon-name {
+  opacity: 1;
+}
+
+.navbar .account-menu button {
+  background-color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  margin: 0 9px;
+  padding: 0;
+  cursor: pointer;
+}
+
