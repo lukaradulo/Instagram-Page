@@ -8,9 +8,9 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
-import { postInterface } from "../../data/constants";
+import { IPost } from "../../data/constants";
 
-const Post:React.FC<postInterface> = ( props ) => {
+const Post:React.FC<IPost> = ( props ) => {
   return (
     <div className='posts'>
         <div className='post'>
@@ -24,7 +24,7 @@ const Post:React.FC<postInterface> = ( props ) => {
             <MoreHorizIcon sx={{ color: grey[800], height: 22 }}/>
           </div>
 
-          <img src={props.imgUrl} alt=''/>
+          <img src={props.url} alt=''/>
           
           <div className='post-interactive'>
             <div>

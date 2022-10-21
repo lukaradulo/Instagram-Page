@@ -1,19 +1,11 @@
 
-export interface fetchedPostsInterface {
-  albumId: string,
-  id: string,
-  title: string,
-  url: string,
-  thumbnailUrl: string
-}
-
-export interface postInterface {
+export interface IPost {
   title: string
-  imgUrl: string
+  url: string
   username: string
 }
 
-export interface fetchedUsersInterface {
+export interface IUser {
   id: 1,
   name: string,
   username: string,
