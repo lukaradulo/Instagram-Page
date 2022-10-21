@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   return (
     <div className='navbar'>
       <div className='navbar-inner'>
-        <div className='nav-title'>Instagram</div>
+        <Link className='nav-title' to='/' style={{ textDecoration: 'none' }}><div>Instagram</div></Link>
 
         <div className='nav-searchbar'>
           <SearchIcon className='nav-search-icon' sx={{ color: grey[500] }} />

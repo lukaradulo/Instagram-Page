@@ -8,22 +8,23 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
+import { postInterface } from "../../data/constants";
 
-const Post:React.FC = () => {
+const Post:React.FC<postInterface> = ( props ) => {
   return (
     <div className='posts'>
         <div className='post'>
           <div className='post-top'>
             <div className='post-profile'>
               <div>
-                <Avatar sx={{ bgcolor: red[500], width: 32, height: 32 }}>R</Avatar>
+                <Avatar sx={{ bgcolor: red[500], width: 32, height: 32 }}>{props.username[0]}</Avatar>
               </div>
-              <div className='post-left-padding'>profile_name</div>
+              <div className='post-left-padding'>{props.username}</div>
               </div>
             <MoreHorizIcon sx={{ color: grey[800], height: 22 }}/>
           </div>
 
-          <img src='selfie.webp' alt=''/>
+          <img src={props.imgUrl} alt=''/>
           
           <div className='post-interactive'>
             <div>
@@ -33,13 +34,16 @@ const Post:React.FC = () => {
             </div>
             <BookmarkBorderIcon sx={{ fontSize: 27 }}/>
           </div>
-          <div className='post-left-padding'>5,584 likes</div>
-          <div className='post-name'>
-            <div>profile_name</div>
-            <div className='post-name-description'>yay description</div>
+
+          <div className='post-info'>
+            <div>{Math.floor(Math.random() * 1000)} likes</div>
+            <div className='post-name'>
+              <div>{props.username}</div>
+              <div className='post-name-description'>{props.title}</div>
+            </div>
+            <div className='post-view-comments'>View all 63 comments</div>
+            <div className='post-upload-time'>10 HOURS AGO</div>
           </div>
-          <div className='post-view-comments'>View all 63 comments</div>
-          <div className='post-upload-time'>10 HOURS AGO</div>
 
           <div className='post-new-comment'>
             <SentimentSatisfiedAltOutlinedIcon sx={{ fontSize: 28, paddingRight: '12px' }}/>

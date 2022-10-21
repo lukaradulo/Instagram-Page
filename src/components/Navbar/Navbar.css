@@ -31,12 +31,13 @@
 }
 
 .nav-title {
-  display: block3;
+  display: block;
   font-family: 'Dancing Script';
   font-size: 28px;
   font-weight: 500;
   margin-left: 20px;
   flex: 1 0 127px;
+  user-select: none;
 }
 
 .nav-searchbar {
