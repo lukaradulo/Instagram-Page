@@ -22,11 +22,11 @@ const HomePage: React.FC = () => {
     <div className='home-page-content'>
       {(allPosts.length !== 0) 
         ? <div>
-            <Post title={allPosts[0].title} url={allPosts[0].url} username={allUsers[0].username}/> 
-            <Post title={allPosts[1].title} url={allPosts[1].url} username={allUsers[1].username}/> 
-            <Post title={allPosts[2].title} url={allPosts[2].url} username={allUsers[2].username}/> 
-            <Post title={allPosts[3].title} url={allPosts[3].url} username={allUsers[3].username}/> 
-            <Post title={allPosts[4].title} url={allPosts[4].url} username={allUsers[4].username}/> 
+            <Post id={allPosts[0].id} title={allPosts[0].title} url={allPosts[0].url} username={allUsers[0].username}/> 
+            <Post id={allPosts[1].id} title={allPosts[1].title} url={allPosts[1].url} username={allUsers[1].username}/> 
+            <Post id={allPosts[2].id} title={allPosts[2].title} url={allPosts[2].url} username={allUsers[2].username}/> 
+            <Post id={allPosts[3].id} title={allPosts[3].title} url={allPosts[3].url} username={allUsers[3].username}/> 
+            <Post id={allPosts[4].id} title={allPosts[4].title} url={allPosts[4].url} username={allUsers[4].username}/> 
           </div>
         : <div></div> }
     </div>

@@ -1,8 +1,15 @@
 
 export interface IPost {
+  id: string
   title: string
   url: string
   username: string
+}
+
+export interface IComment {
+  postId: string
+  name: string
+  body: string
 }
 
 export interface IUser {
