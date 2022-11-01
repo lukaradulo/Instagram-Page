@@ -2,6 +2,16 @@
 
 .profile-page {
   display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  font-family: BlinkMacSystemFont, 'Roboto', sans-serif;
+}
+
+.profile-top-half {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   
@@ -9,12 +19,12 @@
   padding-bottom: 72px;
   padding-right: 240px;
 
-  font-family: BlinkMacSystemFont, 'Roboto', sans-serif;
-
   border-bottom: 1px solid rgb(202, 202, 202);
+
+  width: calc(100% - 750px);
 }
 
-.profile-page img {
+.profile-page .profile-top-half img {
   height: 150px; 
   width: 150px;
   border-radius: 100px;
@@ -85,5 +95,46 @@
   font-size: 16px;
   font-weight: 400;
   color: #262626;
+}
+
+.profile-page .profile-bottom-half {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 510px);
+
+}
+
+.profile-page .profile-bottom-half button {
+  border: 0;
+  border-top: 1px solid rgb(49, 49, 49);
+  margin-top: -1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px 6px;
+
+  font-family: BlinkMacSystemFont, 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #343434;
+  background-color: rgb(250, 250, 250);
+
+  cursor: pointer;
+}
+
+.profile-page .profile-posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.profile-page .profile-posts img {
+  width: 281px;
+  margin: 12px;
+  flex: 0 1 28%;
 }
 

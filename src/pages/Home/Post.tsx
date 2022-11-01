@@ -12,6 +12,7 @@ import { IPost, IComment } from "../../data/constants";
 import OpenedPost from "../../components/OpenedPost/OpenedPost";
 import axios from "axios";
 
+
 const Post:React.FC<IPost> = ( props ) => {
   const [isFocused, setIsFocused] = useState<Boolean>(false);
   const [comments, setComments] = useState<IComment[]>([]);
@@ -22,9 +23,13 @@ const Post:React.FC<IPost> = ( props ) => {
     .catch(error => {console.log(error)})
   }, []);
 
-  function focusPost() {
+  const focusPost = () => {
     setIsFocused(true);
-  }
+  };
+
+  const unfocusPost = (childData: boolean) => {
+    setIsFocused(childData);
+  };
 
   return (
     <div className='posts'>
@@ -67,7 +72,7 @@ const Post:React.FC<IPost> = ( props ) => {
         </div>
       </div>
 
-      {isFocused ? <OpenedPost id={props.id} title={props.title} url={props.url} username={props.username}/> : <div></div>}
+      {isFocused ? <OpenedPost id={props.id} title={props.title} url={props.url} username={props.username} value={unfocusPost}/> : <div></div>}
 
     </div>
   );

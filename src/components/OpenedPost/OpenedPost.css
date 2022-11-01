@@ -14,8 +14,22 @@
   z-index: 200;
 }
 
+.opened-post-parent .unfocusing-area {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 0;
+}
+
 .opened-post {
-  font-family: 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: row;
   max-height: calc(100vh - 40px);
@@ -25,6 +39,8 @@
 
   border-radius: 4px;
   box-shadow: 0 0 0 9999px #000000b0;
+
+  z-index: 100;
 }
 
 .opened-post .right-side {

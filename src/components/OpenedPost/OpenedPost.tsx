@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Comments from './Comments';
 import './OpenedPost.css';
 import { Avatar } from "@mui/material";
@@ -9,11 +9,22 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
-import { IPost } from '../../data/constants';
+import { IComment, IPost } from '../../data/constants';
+import axios from 'axios';
 
-const OpenedPost: React.FC<IPost> = (props) => {
+interface IOpenedPost extends IPost {
+  value: (childData: boolean) => void;
+}
+
+const OpenedPost: React.FC<IOpenedPost> = (props) => {
+  function unfocusPost(this: any) {
+    props.value(false);
+  }
+
   return (
     <div className='opened-post-parent'>
+      <div className='unfocusing-area' onClick={unfocusPost}></div>
+
       <div className='opened-post'>
         <img src={props.url} alt=''/>
 
@@ -26,7 +37,7 @@ const OpenedPost: React.FC<IPost> = (props) => {
             <MoreHorizIcon sx={{ color: grey[800], height: 22 }}/>
           </div>
 
-          <Comments/>
+          <Comments id={props.id} title={props.title} url={props.url} username={props.username} />
 
           <div>
             <div className='post-info'>
