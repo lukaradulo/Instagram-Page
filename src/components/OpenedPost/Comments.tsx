@@ -3,7 +3,7 @@ import { red, blue } from "@mui/material/colors";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { IComment, IPost } from "../../data/constants";
-import './Comments.css';
+import './Comments.scss';
 
 const Comments: React.FC<IPost> = ( props ) => {
   const [comments, setComments] = useState<IComment[]>([]);

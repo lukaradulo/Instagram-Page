@@ -1,0 +1,136 @@
+@import './../../data/globals.scss';
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  @include setup-font();
+
+  .profile-top-half {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    margin-top: 102px;
+
+    padding: {
+      bottom: 72px;
+      right: 240px;
+    }
+  
+    border-bottom: $border-dark-gray;
+  
+    width: calc(100% - 750px);
+
+    img {
+      height: 150px; 
+      width: 150px;
+      border-radius: 100px;
+      margin-right: 104px;
+    }
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .top-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 28px;
+
+    .profile-handle {
+      @include setup-font($size: 27px, $weight: 300);
+    }
+    
+    button {
+      @include setup-font($weight: $bolded-font-weight);
+      color: rgb(30, 30, 30);
+    
+      margin: {
+        left: 20px;
+        right: 12px;
+      }
+      padding: 5px 9px;
+    
+      background-color: $background-body;
+      border: $border-dark-gray;
+      border-radius: 4px;
+    }
+  }
+  
+  .middle-section {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 26px;
+  
+    color: $font-primary-color;
+  
+    @include setup-font($size: 16px);
+
+    .number-followers {
+      margin: 0 42px;
+    }
+  }
+  
+  .bottom-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-name {
+    @include setup-font($size: 16px, $weight: 600);
+    color: $font-primary-color;
+    padding-bottom: 3px;
+  }
+  
+  .profile-description {
+    @include setup-font($size: 16px);
+    color: $font-primary-color;
+  }
+  
+  .profile-bottom-half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 510px);
+
+    button {
+      border: 0;
+      border-top: 1px solid rgb(49, 49, 49);
+      margin-top: -1px;
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      padding: 18px 6px;
+    
+      @include setup-font($weight: $bolded-font-weight);
+    
+      color: #343434;
+      background-color: $background-body;
+    
+      cursor: pointer;
+    }
+  }
+  
+  .profile-posts {
+    display: flex;
+    flex: {
+      direction: row;
+      wrap: wrap;
+    }
+
+    img {
+      width: 281px;
+      margin: 12px;
+      flex: 0 1 28%;
+    }
+  }
+}

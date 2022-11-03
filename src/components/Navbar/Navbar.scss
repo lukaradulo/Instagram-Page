@@ -1,0 +1,143 @@
+@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap";
+@import './../../data/globals.scss';
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  position: fixed;
+  top: 0; 
+  width: 100%;
+
+  border-bottom: $border-primary;
+  box-sizing: border-box;
+  background-color: $background-primary;
+
+  z-index: 100;
+
+  .navbar-inner {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 12px 16px;
+  
+    max-width: 975px;
+    width: 100%;
+  }
+  
+  .nav-title {
+    display: block;
+    @include setup-font($stack: 'Dancing Script', $size: 28px, $weight: $bolded-font-weight);
+    margin-left: 20px;
+    flex: 1 0 127px;
+    user-select: none;
+  }
+  
+  .nav-searchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+  
+    border-radius: 8px;
+  
+    height: 36px;
+    min-width: 125px;
+    width: 268px;
+    
+    background-color: rgb(239, 239, 239);
+  }
+  
+  .nav-search-icon {
+    padding-left: 10px;
+  }
+  
+  input {
+    width: 88%;
+    padding: 3px 10px;
+    
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    
+    @include setup-font($weight: 300, $size: 16px);
+  
+    color: $font-primary-color;
+    background-color: rgb(239, 239, 239);
+  }
+  
+  ::placeholder {
+    color: rgb(158, 158, 158);
+  }
+  
+  .nav-icons {
+    display: flex;
+    flex-direction: row;
+    align: {
+      content: center;
+      items: center;
+    }
+    justify-content: flex-end;
+    margin-right: 20px;
+    flex: 1 0 127px;
+    color: rgb(63, 63, 63);
+  }
+  
+  a:visited {
+    text-decoration: none; 
+    color: rgb(63, 63, 63); 
+  }
+  
+  .nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    margin: 0 9px;
+    height: 28px;
+    width: 28px;
+  
+    text-decoration: none;
+  }
+  
+  img {
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    border: 1px solid rgb(174, 174, 174);
+    margin: 0;
+  }
+  
+  .icon-name {
+    position: absolute;
+    bottom: -20px;
+  
+    @include setup-font($size: 13px);
+  
+    padding: 4px;
+    border-radius: 4px;
+  
+    color: rgb(244, 244, 244);
+    background-color: rgb(161, 161, 161);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .nav-icon:hover .icon-name {
+    opacity: 1;
+  }
+  
+  .account-menu button {
+    background-color: $background-primary;
+    border: none;
+    width: 28px;
+    height: 28px;
+    margin: 0 9px;
+    padding: 0;
+    cursor: pointer;
+  }
+}

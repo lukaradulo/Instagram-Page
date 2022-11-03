@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Comments from './Comments';
-import './OpenedPost.css';
+import './OpenedPost.scss';
 import { Avatar } from "@mui/material";
 import { red, grey } from '@mui/material/colors';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -9,8 +9,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
-import { IComment, IPost } from '../../data/constants';
-import axios from 'axios';
+import { IPost } from '../../data/constants';
 
 interface IOpenedPost extends IPost {
   value: (childData: boolean) => void;

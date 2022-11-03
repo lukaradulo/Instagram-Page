@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css';
+import './Navbar.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';

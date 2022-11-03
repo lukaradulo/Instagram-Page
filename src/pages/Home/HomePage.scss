@@ -1,0 +1,135 @@
+@import './../../data/globals.scss';
+
+.home-page-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+
+  .show-more-button {
+    background-color: $background-primary;
+    border: $border-primary;
+    border-radius: 12px;
+    cursor: pointer;
+    min-height: 3rem;
+    padding: 16px 24px;
+    margin: 18px 0 30px 0;
+    @include setup-font($weight: $bolded-font-weight);
+    color: #3b3b3b;
+  }
+  
+  .show-more-button:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.65);
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 462px;
+  width: 100%;
+  
+  @include setup-font($weight: $bolded-font-weight);
+}
+
+.post {
+  border: $border-primary;
+  border-radius: 9px;
+  margin: 17px 0 10px 0;
+  background-color: $background-primary;
+  color: $font-primary-color;
+  width: 100%;
+
+  .post-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 14px;
+  }
+
+  .post-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .post-left-padding {
+    padding-left: 15px;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  .post-interactive {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 12px;
+  }
+  
+  .post-info {
+    padding-left: 15px;
+  }
+  
+  .post-name {
+    display: flex;
+    flex-direction: row;
+  
+    margin-top: 9px;
+  }
+  
+  .post-name-description {
+    font-weight: $primary-font-weight;
+    margin-left: 6px;
+  }
+  
+  .post-upload-time {
+    color: $font-grey-color;
+    @include setup-font($size: 10px);
+    margin: 10px 0 12px 0;
+  }
+  
+  .post-view-comments {
+    color: $font-grey-color;
+    @include setup-font();
+    margin-top: 8px;
+  
+    cursor: pointer;
+  }
+  
+  .post-new-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+  
+    width: 94%;
+    border-top: $border-secondary;
+  
+    padding: 12px 16px 12px 12px;
+
+    button {
+      @include setup-font($size: 15px);
+    
+      color: rgb(177, 219, 252);
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+    }
+  }
+  
+  input {
+    flex: 1;
+    border: none;
+    font-size: 15px;
+    outline: none;
+  }
+}

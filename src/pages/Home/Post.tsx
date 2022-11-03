@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './HomePage.css';
+import './HomePage.scss';
 import { Avatar } from "@mui/material";
 import { red, grey } from '@mui/material/colors';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';

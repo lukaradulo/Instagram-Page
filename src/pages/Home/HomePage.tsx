@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import './HomePage.css';
+import './HomePage.scss';
 import Post from "./Post";
 import { IPost, IUser } from "../../data/constants";
 

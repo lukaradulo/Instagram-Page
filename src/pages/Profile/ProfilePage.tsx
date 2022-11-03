@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './ProfilePage.css';
+import './ProfilePage.scss';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { grey } from "@mui/material/colors";
 import TableViewIcon from '@mui/icons-material/TableView';

@@ -2,7 +2,7 @@ import React from 'react';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-import './../Navbar/Navbar.css';
+import './../Navbar/Navbar.scss';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const AccountMenu:React.FC = () => {
