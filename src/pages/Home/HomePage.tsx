@@ -7,6 +7,7 @@ import { IPost, IUser } from "../../data/constants";
 const HomePage: React.FC = () => {
   const [allPosts, setAllPosts] = useState<IPost[]>([]);
   const [allUsers, setAllUsers] = useState<IUser[]>([]);
+  const [postsLength, setPostLength] = useState<number>(4);
 
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/photos')
@@ -17,18 +18,23 @@ const HomePage: React.FC = () => {
     .then(response => setAllUsers(response.data))
     .catch(error => {console.log(error)})
   }, []);
+
+  const posts = (postsNumber: number) => allPosts.slice(0, postsNumber).map((post, index) => {
+    return <Post id={post.id} title={post.title} url={post.url} username={allUsers[index % 10].username}/>
+  });
+
+  const showMore = () => {
+    setPostLength(postsLength + 4);
+  };
   
   return (
     <div className='home-page-content'>
-      {(allPosts.length !== 0) 
+      {(allUsers.length !== 0) 
         ? <div>
-            <Post id={allPosts[0].id} title={allPosts[0].title} url={allPosts[0].url} username={allUsers[0].username}/> 
-            <Post id={allPosts[1].id} title={allPosts[1].title} url={allPosts[1].url} username={allUsers[1].username}/> 
-            <Post id={allPosts[2].id} title={allPosts[2].title} url={allPosts[2].url} username={allUsers[2].username}/> 
-            <Post id={allPosts[3].id} title={allPosts[3].title} url={allPosts[3].url} username={allUsers[3].username}/> 
-            <Post id={allPosts[4].id} title={allPosts[4].title} url={allPosts[4].url} username={allUsers[4].username}/> 
+            {posts(postsLength)}
           </div>
         : <div></div> }
+      <button className='show-more-button' onClick={showMore}>Show More</button>
     </div>
   );
 }
