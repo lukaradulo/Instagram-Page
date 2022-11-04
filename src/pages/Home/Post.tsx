@@ -20,13 +20,10 @@ const Post:React.FC<IPost> = ( props ) => {
     axios.get(`https://jsonplaceholder.typicode.com/posts/${props.id}/comments`)
     .then(response => setComments(response.data))
     .catch(error => {console.log(error)})
+    // eslint-disable-next-line
   }, []);
 
-  const focusPost = () => {
-    setIsFocused(true);
-  };
-
-  const unfocusPost = (childData: boolean) => {
+  const focusPost = (childData: boolean) => {
     setIsFocused(childData);
   };
 
@@ -60,7 +57,7 @@ const Post:React.FC<IPost> = ( props ) => {
             <div>{props.username}</div>
             <div className='post-name-description'>{props.title}</div>
           </div>
-          <div className='post-view-comments' onClick={focusPost}>View all {comments.length} comments</div>
+          <div className='post-view-comments' onClick={() => focusPost(true)}>View all {comments.length} comments</div>
           <div className='post-upload-time'>10 HOURS AGO</div>
         </div>
 
@@ -71,7 +68,7 @@ const Post:React.FC<IPost> = ( props ) => {
         </div>
       </div>
 
-      {isFocused ? <OpenedPost id={props.id} title={props.title} url={props.url} username={props.username} comments={comments} value={unfocusPost}/> : <div></div>}
+      {isFocused ? <OpenedPost id={props.id} title={props.title} url={props.url} username={props.username} comments={comments} value={focusPost}/> : <div></div>}
 
     </div>
   );

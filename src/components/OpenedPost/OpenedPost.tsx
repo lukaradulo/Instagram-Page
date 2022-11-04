@@ -16,13 +16,13 @@ interface IOpenedPost extends IPost {
 }
 
 const OpenedPost: React.FC<IOpenedPost> = (props) => {
-  function unfocusPost(this: any) {
+  const focusPost = () => {
     props.value(false);
   }
 
   return (
     <div className='opened-post-parent'>
-      <div className='unfocusing-area' onClick={unfocusPost}></div>
+      <div className='unfocusing-area' onClick={focusPost}></div>
 
       <div className='opened-post'>
         <img src={props.url} alt=''/>
