@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   }, []);
 
   const posts = (postsNumber: number) => allPosts.slice(0, postsNumber).map((post, index) => {
-    return <Post id={post.id} title={post.title} url={post.url} username={allUsers[index % 10].username}/>
+    return <Post id={post.id} title={post.title} url={post.url} username={allUsers[index % 10].username} comments={[]}/>
   });
 
   const showMore = () => {
