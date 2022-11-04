@@ -36,7 +36,7 @@ const OpenedPost: React.FC<IOpenedPost> = (props) => {
             <MoreHorizIcon sx={{ color: grey[800], height: 22 }}/>
           </div>
 
-          <Comments id={props.id} title={props.title} url={props.url} username={props.username} />
+          <Comments id={props.id} title={props.title} url={props.url} username={props.username} comments={props.comments} />
 
           <div>
             <div className='post-info'>

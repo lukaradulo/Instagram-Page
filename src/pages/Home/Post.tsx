@@ -12,7 +12,6 @@ import { IPost, IComment } from "../../data/constants";
 import OpenedPost from "../../components/OpenedPost/OpenedPost";
 import axios from "axios";
 
-
 const Post:React.FC<IPost> = ( props ) => {
   const [isFocused, setIsFocused] = useState<Boolean>(false);
   const [comments, setComments] = useState<IComment[]>([]);
@@ -72,7 +71,7 @@ const Post:React.FC<IPost> = ( props ) => {
         </div>
       </div>
 
-      {isFocused ? <OpenedPost id={props.id} title={props.title} url={props.url} username={props.username} value={unfocusPost}/> : <div></div>}
+      {isFocused ? <OpenedPost id={props.id} title={props.title} url={props.url} username={props.username} comments={comments} value={unfocusPost}/> : <div></div>}
 
     </div>
   );

@@ -1,18 +1,10 @@
 import { Avatar } from "@mui/material";
 import { red, blue } from "@mui/material/colors";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { IComment, IPost } from "../../data/constants";
+import React from "react";
+import { IPost } from "../../data/constants";
 import './Comments.scss';
 
 const Comments: React.FC<IPost> = ( props ) => {
-  const [comments, setComments] = useState<IComment[]>([]);
-
-  useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/posts/${props.id}/comments`)
-    .then(response => setComments(response.data))
-    .catch(error => {console.log(error)})
-  }, []);
 
   function getRandomNumber(): number {
     return Math.floor(Math.random() * 30) + 50;
@@ -35,7 +27,7 @@ const Comments: React.FC<IPost> = ( props ) => {
         </div>
       </div>
           
-      {comments.map((comment) => (
+      {props.comments.map((comment) => (
         <div className='description-section'>
           <Avatar sx={{ bgcolor: blue[500], width: 32, height: 32 }}>{comment.name[0]}</Avatar>
           

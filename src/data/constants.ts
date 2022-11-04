@@ -4,6 +4,7 @@ export interface IPost {
   title: string
   url: string
   username: string
+  comments: IComment[];
 }
 
 export interface IComment {
